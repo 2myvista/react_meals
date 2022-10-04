@@ -4,7 +4,7 @@ import {useGlobalContext} from '../context';
 const Search = () => {
 	const [text, setText] = useState('');
 	// переменная состояния, получаемая из  ../context
-	const {setSearqqchTerm} = useGlobalContext()
+	const {setSearchTerm} = useGlobalContext()
 
 	const handleChange = (e) => {
 		// устанавливаем поисковое значение через получения введенного такста в input поиска
