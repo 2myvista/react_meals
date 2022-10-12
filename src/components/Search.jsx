@@ -34,4 +34,5 @@ const Search = () => {
 	</form>
 	</header>
 }
+
 export default Search

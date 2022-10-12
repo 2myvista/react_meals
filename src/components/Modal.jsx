@@ -16,4 +16,5 @@ const Modal = () => {
 		</div>
 	</aside>
 }
+
 export default Modal

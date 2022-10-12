@@ -28,4 +28,5 @@ const Meals = () => {
 		})}
 	</section>
 }
+
 export default Meals
