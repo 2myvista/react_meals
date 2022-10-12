@@ -3,7 +3,7 @@ import {BsHandThumbsUp} from "react-icons/bs";
 
 const Meals = () => {
 	// заберем из контекстта переменные
-	const {meals, loading} = useGlobalContext();
+	const {meals, loading, selectMeal, addToFavorites, removeFormFavorites} = useGlobalContext();
 	if (loading) {
 		return <section className="section">
 			<h4>данные загружаются.......</h4>
@@ -17,12 +17,12 @@ const Meals = () => {
 	return <section className="section-center">
 		{meals.map((singleMeal)=>{
 			const {idMeal, strMeal:title, strMealThumb:image} = singleMeal
-			console.log(idMeal);
+			//console.log(idMeal);
 			return <article key={idMeal} className="single-meal">
-					<img src={image} className="img"/>
+					<img src={image} className="img" alt={title} onClick={()=>selectMeal(idMeal)}/>
 					<footer>
 						<h5>{title}</h5>
-						<button className="like-btn"><BsHandThumbsUp/></button>
+						<button className="like-btn"  onClick={()=>addToFavorites(idMeal)}><BsHandThumbsUp/></button>
 					</footer>
 					</article>
 		})}
